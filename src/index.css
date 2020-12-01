@@ -1,0 +1,36 @@
+body {
+  margin: 0;
+  font-family: -apple-system, 'Quicksand',  BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.MuiStepLabel-label.MuiStepLabel-alternativeLabel{
+  margin-top: 0 !important;
+}
+.MuiStep-horizontal{
+  padding-left: .1rem !important;
+  padding-right: .1rem !important;
+}
+.labeInstruction{
+  border-bottom: 4px solid #fff;
+  color: #fff;
+}
+
+.labeInstructionBordered{
+  border-bottom: 4px solid #F36888;
+  color: #fff;
+  
+}
+.btn-transparent{
+    border: 1px solid #00B4D8 !important;
+    margin: 0 .5rem !important;
+    border-radius: .2rem !important;
+    color: #fff !important;
+}
+
+.btn-filled{
+  background-color: #F36888 !important; 
+}
