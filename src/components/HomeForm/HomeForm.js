@@ -12,9 +12,11 @@ import SearchIcon from '@material-ui/icons/Search';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ArrowRightAltIcon from '@material-ui/icons/ArrowRightAlt';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import { Card, CardContent, FormControl, Input, InputLabel, InputAdornment, IconButton, TextField } from '@material-ui/core';
-import DatePicker from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css';
+import { FormGroup, FormControlLabel, Checkbox, Card, CardContent, FormControl, Input, InputLabel, InputAdornment, IconButton, TextField } from '@material-ui/core';
+import CheckBoxIcon from '@material-ui/icons/CheckBox';
+import CheckBoxOutlineBlankIcon from '@material-ui/icons/CheckBoxOutlineBlank';
+import ErrorOutlineIcon from '@material-ui/icons/ErrorOutline';
+import CHECK from '../../assets/check.png';
 import NY from '../../assets/ny.png';
 import MIAMI from '../../assets/miami.png';
 import TH from '../../assets/thailand.png';
@@ -78,7 +80,7 @@ const useStyles = makeStyles((theme) => ({
 		marginBottom: theme.spacing(1),
 	},
 	stepContainer: {
-		margin: '3rem 0',
+		padding: '3rem 0',
 	},
 	step1: {
 		color: '#fff',
@@ -96,7 +98,7 @@ const useStyles = makeStyles((theme) => ({
 		fontWeight: 'bold',
 	},
 	mainCard: {
-		width: '60%',
+		width: '385px',
 		margin: 'auto',
 		display: 'flex',
 		justifyContent: 'center',
@@ -164,9 +166,12 @@ const useStyles = makeStyles((theme) => ({
 		display: 'flex',
 		justifyContent: 'center',
 		alignItems: 'flex-end',
-		'& span':{
-			margin:'0 1rem'
-		}
+		'& span': {
+			margin: '0 1rem',
+		},
+	},
+	checkBox: {
+		color: '#00B4D8',
 	},
 }));
 
@@ -276,6 +281,97 @@ function HomeForm() {
 				</CardContent>
 			</Card>
 		</div>,
+		<div className={classes.step1}>
+			<div className={classes.step}>{activeStep + 1}</div>
+			<h4>Travel Companies</h4>
+			<p>With whom would you like to go?</p>
+
+			<Card className={classes.mainCard}>
+				<CardContent>
+					<FormControl component='fieldset'>
+						<FormGroup aria-label='position' row>
+							<FormControlLabel
+								value='top'
+								control={<Checkbox className={classes.checkBox} icon={<img src={CHECK} style={{ width: '25px', height: '25px' }} alt='check' />} checkedIcon={<CheckBoxIcon style={{ width: '25px', height: '25px' }} />} name='group' />}
+								label='Solo'
+								labelPlacement='top'
+							/>
+							<FormControlLabel
+								value='top'
+								control={<Checkbox className={classes.checkBox} icon={<img src={CHECK} style={{ width: '25px', height: '25px' }} alt='check' />} checkedIcon={<CheckBoxIcon style={{ width: '25px', height: '25px' }} />} name='group' />}
+								label='Friends'
+								labelPlacement='top'
+							/>
+							<div style={{ position: 'relative' }}>
+								<FormControlLabel
+									value='top'
+									control={<Checkbox className={classes.checkBox} icon={<img src={CHECK} style={{ width: '25px', height: '25px' }} alt='check' />} checkedIcon={<CheckBoxIcon style={{ width: '25px', height: '25px' }} />} name='group' />}
+									label='Group'
+									labelPlacement='top'
+								/>{' '}
+								<div style={{ position: 'absolute', top: 0, right: 0 }}>
+									<ErrorOutlineIcon style={{ color: 'red', fontSize: 'x-small' }} color='red' />
+								</div>
+							</div>
+						</FormGroup>
+					</FormControl>
+					<FormControl>
+						<InputLabel htmlFor='standard-adornment-password'>Destination(s)</InputLabel>
+						<Input
+							endAdornment={
+								<InputAdornment position='end'>
+									<IconButton aria-label='search'>
+										<SearchIcon />
+									</IconButton>
+								</InputAdornment>
+							}
+						/>
+					</FormControl>
+					<p style={{ margin: '.5rem 0' }}>Are you planning the transport for:</p>
+					<FormControl component='fieldset'>
+						<FormGroup aria-label='position' row>
+							<FormControlLabel
+								value='top'
+								control={<Checkbox className={classes.checkBox} icon={<img src={CHECK} style={{ width: '25px', height: '25px' }} alt='check' />} checkedIcon={<CheckBoxIcon style={{ width: '25px', height: '25px' }} />} name='group' />}
+								label='Yourself'
+								labelPlacement='top'
+							/>
+							<FormControlLabel
+								value='top'
+								control={<Checkbox className={classes.checkBox} icon={<img src={CHECK} style={{ width: '25px', height: '25px' }} alt='check' />} checkedIcon={<CheckBoxIcon style={{ width: '25px', height: '25px' }} />} name='group' />}
+								label='A part of the group'
+								labelPlacement='top'
+							/>
+							<FormControlLabel
+								value='top'
+								control={<Checkbox className={classes.checkBox} icon={<img src={CHECK} style={{ width: '25px', height: '25px' }} alt='check' />} checkedIcon={<CheckBoxIcon style={{ width: '25px', height: '25px' }} />} name='group' />}
+								label='Everyone'
+								labelPlacement='top'
+							/>
+						</FormGroup>
+					</FormControl>
+				</CardContent>
+			</Card>
+		</div>,
+		<div className={classes.step1}>
+			<div className={classes.step}>{activeStep + 1}</div>
+			<h4>Transport</h4>
+			<p>Where and with what will you strart the trip?</p>
+
+			<Card className={classes.mainCard}>
+				<CardContent style={{width:'100%'}}>
+					<FormControl style={{ width: '100%' }}>
+						<InputLabel htmlFor='standard-adornment-password'>Start Location</InputLabel>
+						<Input />
+					</FormControl>
+					<p style={{fontSize:'16px', marginTop:'2rem'}}>How would you like to get to Japan?</p>
+					<FormControl style={{ width: '100%' }}>
+						<InputLabel htmlFor='standard-adornment-password'>Search for a transportation method</InputLabel>
+						<Input />
+					</FormControl>
+				</CardContent>
+			</Card>
+		</div>,
 	];
 	return (
 		<div className={classes.root}>
@@ -299,7 +395,7 @@ function HomeForm() {
 				) : (
 					<div style={{ textAlign: 'center' }}>
 						<div className={classes.instructions}>{stepContent[activeStep]}</div>
-						<div>
+						<div style={{ margin: '1rem 0' }}>
 							<Button disabled={activeStep === 0} onClick={handleBack} className={clsx(classes.button, 'btn-transparent')}>
 								{activeStep > 0 ? (
 									<>
@@ -311,7 +407,9 @@ function HomeForm() {
 							</Button>
 							<Button variant='contained' color='primary' onClick={handleNext} className={clsx(classes.button, 'btn-filled')}>
 								{activeStep === steps.length - 1 ? (
-									<>Finish</>
+									<>
+										Onwards to detailed planning <ChevronRightIcon />
+									</>
 								) : (
 									<>
 										Next <ChevronRightIcon />{' '}

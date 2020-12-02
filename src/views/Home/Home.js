@@ -1,6 +1,6 @@
 import React from 'react';
 import classes from './Home.module.css';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import TopNavBar from '../../components/Navbar/Navbar';
 import HomeForm from '../../components/HomeForm/HomeForm';
 function Home() {
