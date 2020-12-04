@@ -49,3 +49,6 @@ body {
 .btn-filled{
   background-color: #F36888 !important; 
 }
+.FlightSearch > div .MuiSvgIcon-root{
+  color: #656565 !important;
+}

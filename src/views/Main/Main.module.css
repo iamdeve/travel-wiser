@@ -1,3 +1,6 @@
+body{
+    font-family: 'Quicksand', sans-serif;
+}
 .MainContainer{
     width: 100%;
     height: 100vh;
@@ -16,4 +19,70 @@
     position: absolute;
     bottom: 0;
     width: 100%;
+}
+.headerContent{
+    color: #fff;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: -2rem;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.heading{
+    width: 60%;
+    margin: auto;
+}
+
+.flights{
+    display: flex;
+}
+
+.flights h3{
+    margin-right:.5rem ;
+}
+
+.flights .costField{
+    margin: 0 .5rem;
+}
+.attachIcon{
+    margin: 0 .5rem;
+    transform: rotateZ(45deg);
+}
+
+.FlightSearch{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.FlightSearch > div{
+    margin: 0 .5rem;
+}
+
+.FlightSearch > div .MuiSvgIcon-root{
+    color: #656565 !important;
+}
+
+.AccommodationWrapper{
+    padding: 1rem 0;
+}
+.Accommodation{
+    display: flex;
+}
+
+.Cost{
+    margin: 0 1rem;
+    margin-top: -.81rem;
+    width: 5%;
+    text-align: center;
+}
+
+.Cost label {
+    margin: 0 !important;
+}
+.Cost input {
+    padding-bottom: 0rem;
 }

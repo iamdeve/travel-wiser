@@ -14,7 +14,6 @@ import ArrowRightAltIcon from '@material-ui/icons/ArrowRightAlt';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import { FormGroup, FormControlLabel, Checkbox, Card, CardContent, FormControl, Input, InputLabel, InputAdornment, IconButton, TextField } from '@material-ui/core';
 import CheckBoxIcon from '@material-ui/icons/CheckBox';
-import CheckBoxOutlineBlankIcon from '@material-ui/icons/CheckBoxOutlineBlank';
 import ErrorOutlineIcon from '@material-ui/icons/ErrorOutline';
 import CHECK from '../../assets/check.png';
 import NY from '../../assets/ny.png';
